@@ -1,0 +1,10 @@
+<footer class="site-footer">
+  <div class="footer-inner">
+    <nav [attr.aria-label]="language() === 'en' ? 'Social links' : 'Liens sociaux'">
+      <a [href]="site.github" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a [href]="site.linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a [href]="'mailto:' + site.email">{{ site.email }}</a>
+    </nav>
+    <p>© {{ year }} {{ site.ownerName }}</p>
+  </div>
+</footer>

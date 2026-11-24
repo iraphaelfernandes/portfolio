@@ -5,7 +5,45 @@
     <title>Portfolio</title>
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link
+      rel="preload"
+      href="/assets/fonts/jetbrains-mono-400.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/jetbrains-mono-500.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/jetbrains-mono-700.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <script>
+      (() => {
+        let savedTheme = null;
+        try {
+          const storedTheme = localStorage.getItem('theme');
+          if (storedTheme === 'dark' || storedTheme === 'light') {
+            savedTheme = storedTheme;
+          }
+        } catch {
+          // Use the system preference when browser storage is unavailable.
+        }
+
+        const prefersDark = window.matchMedia?.('(prefers-color-scheme: dark)').matches ?? false;
+        document.documentElement.dataset['theme'] = savedTheme ?? (prefersDark ? 'dark' : 'light');
+      })();
+    </script>
   </head>
   <body>
     <app-root></app-root>

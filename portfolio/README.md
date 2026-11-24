@@ -30,6 +30,8 @@ npm run e2e
 
 The production build prerenders the configured routes to `dist/portfolio/browser`.
 
+The shared shell includes the dark/light theme control, an English/French language toggle, responsive navigation, and the initial design tokens. Theme choice follows the system preference by default and is saved in browser storage when changed. Language routing and persistence are part of Milestone 3.
+
 ## Cloudflare Pages
 
 Connect the repository to Cloudflare Pages using Git integration. Since this Angular app lives in `portfolio/`, configure:

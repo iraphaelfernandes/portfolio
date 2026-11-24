@@ -1,3 +1,91 @@
-/* You can add global styles to this file, and also import other style files */
-
 @import 'tailwindcss';
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/fonts/jetbrains-mono-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/assets/fonts/jetbrains-mono-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/assets/fonts/jetbrains-mono-700.woff2') format('woff2');
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #1a1713;
+  --surface: #231f1a;
+  --border: #3a342b;
+  --text: #e8e1d4;
+  --muted: #9a9080;
+  --accent: #6fae5b;
+  --accent-contrast: #1a1713;
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+  --bg: #f4efe4;
+  --surface: #fbf7ee;
+  --border: #cfc5b0;
+  --text: #2a251d;
+  --muted: #6b6354;
+  --accent: #3f7a34;
+  --accent-contrast: #fbf7ee;
+}
+
+html {
+  min-width: 320px;
+  background: var(--bg);
+  font-family: 'JetBrains Mono', monospace;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.menu-backdrop {
+  background: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

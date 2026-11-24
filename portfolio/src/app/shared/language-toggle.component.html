@@ -1,0 +1,22 @@
+<div
+  class="language-toggle"
+  role="group"
+  [attr.aria-label]="language() === 'en' ? 'Language' : 'Langue'"
+>
+  <button
+    type="button"
+    [attr.aria-pressed]="language() === 'en'"
+    [class.selected]="language() === 'en'"
+    (click)="selectLanguage('en')"
+  >
+    EN
+  </button>
+  <button
+    type="button"
+    [attr.aria-pressed]="language() === 'fr'"
+    [class.selected]="language() === 'fr'"
+    (click)="selectLanguage('fr')"
+  >
+    FR
+  </button>
+</div>
