@@ -1,0 +1,36 @@
+{
+  "app": {
+    "skipToContent": "Skip to content",
+    "homeTitle": "Portfolio"
+  },
+  "nav": {
+    "main": "Main navigation",
+    "projects": "Projects",
+    "about": "About",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "language": "Language",
+    "socialLinks": "Social links"
+  },
+  "theme": {
+    "switchToLight": "Switch to light theme",
+    "switchToDark": "Switch to dark theme"
+  },
+  "home": {
+    "hero": {
+      "title": "Portfolio"
+    }
+  },
+  "pages": {
+    "projects": {
+      "title": "Projects"
+    },
+    "about": {
+      "title": "About"
+    }
+  },
+  "notFound": {
+    "title": "Page not found",
+    "message": "The page you are looking for does not exist."
+  }
+}

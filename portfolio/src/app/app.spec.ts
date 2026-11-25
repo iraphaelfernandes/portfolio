@@ -1,10 +1,12 @@
 import { TestBed } from '@angular/core/testing';
+import { appConfig } from './app.config';
 import { App } from './app';
 
 describe('App', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [App],
+      providers: appConfig.providers,
     }).compileComponents();
   });
 
@@ -14,10 +16,12 @@ describe('App', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should render the portfolio heading', async () => {
+  it('should render the shared site shell', async () => {
     const fixture = TestBed.createComponent(App);
-    await fixture.whenStable();
+    fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toBe('Portfolio');
+    expect(compiled.querySelector('app-site-header')).toBeTruthy();
+    expect(compiled.querySelector('main#main-content')).toBeTruthy();
+    expect(compiled.querySelector('app-site-footer')).toBeTruthy();
   });
 });

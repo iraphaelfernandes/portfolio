@@ -1,0 +1,36 @@
+{
+  "app": {
+    "skipToContent": "Passer au contenu",
+    "homeTitle": "Portfolio"
+  },
+  "nav": {
+    "main": "Navigation principale",
+    "projects": "Projets",
+    "about": "À propos",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "language": "Langue",
+    "socialLinks": "Liens sociaux"
+  },
+  "theme": {
+    "switchToLight": "Passer au thème clair",
+    "switchToDark": "Passer au thème sombre"
+  },
+  "home": {
+    "hero": {
+      "title": "Portfolio"
+    }
+  },
+  "pages": {
+    "projects": {
+      "title": "Projets"
+    },
+    "about": {
+      "title": "À propos"
+    }
+  },
+  "notFound": {
+    "title": "Page introuvable",
+    "message": "La page que vous recherchez n’existe pas."
+  }
+}

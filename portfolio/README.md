@@ -30,7 +30,7 @@ npm run e2e
 
 The production build prerenders the configured routes to `dist/portfolio/browser`.
 
-The shared shell includes the dark/light theme control, an English/French language toggle, responsive navigation, and the initial design tokens. Theme choice follows the system preference by default and is saved in browser storage when changed. Language routing and persistence are part of Milestone 3.
+The shared shell includes the dark/light theme control, an English/French language toggle, responsive navigation, and the initial design tokens. Theme choice follows the system preference by default and is saved in browser storage when changed. The UI supports `/en/...` and `/fr/...` routes; `/` selects the saved language or detects French from the browser language. Current shell strings are in `src/assets/i18n/`, with checks for matching keys and missing references. Projects and About currently have translated route headings; their content is added in later milestones.
 
 ## Cloudflare Pages
 

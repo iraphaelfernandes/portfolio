@@ -30,8 +30,16 @@
     />
     <script>
       (() => {
+        const supportedLanguages = ['en', 'fr'];
+        const pathLanguage = window.location.pathname.split('/')[1];
+        let savedLanguage = null;
         let savedTheme = null;
         try {
+          const storedLanguage = localStorage.getItem('lang');
+          if (storedLanguage && supportedLanguages.includes(storedLanguage)) {
+            savedLanguage = storedLanguage;
+          }
+
           const storedTheme = localStorage.getItem('theme');
           if (storedTheme === 'dark' || storedTheme === 'light') {
             savedTheme = storedTheme;
@@ -40,8 +48,18 @@
           // Use the system preference when browser storage is unavailable.
         }
 
+        const browserLanguage = navigator.language.toLowerCase().startsWith('fr') ? 'fr' : 'en';
+        const language = supportedLanguages.includes(pathLanguage)
+          ? pathLanguage
+          : (savedLanguage ?? browserLanguage);
+        document.documentElement.lang = language;
+
         const prefersDark = window.matchMedia?.('(prefers-color-scheme: dark)').matches ?? false;
         document.documentElement.dataset['theme'] = savedTheme ?? (prefersDark ? 'dark' : 'light');
+
+        if (window.location.pathname === '/') {
+          window.location.replace(`/${language}`);
+        }
       })();
     </script>
   </head>

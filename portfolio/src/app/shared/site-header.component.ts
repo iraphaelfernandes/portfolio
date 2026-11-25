@@ -9,6 +9,8 @@ import {
   signal,
   ViewChild,
 } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { TranslocoPipe } from '@jsverse/transloco';
 import { SITE_CONFIG } from '../site.config';
 import { Language } from './language';
 import { LanguageToggleComponent } from './language-toggle.component';
@@ -21,7 +23,9 @@ import { ThemeToggleComponent } from './theme-toggle.component';
     CdkConnectedOverlay,
     CdkOverlayOrigin,
     LanguageToggleComponent,
+    RouterLink,
     ThemeToggleComponent,
+    TranslocoPipe,
   ],
   templateUrl: './site-header.component.html',
   styleUrl: './site-header.component.css',

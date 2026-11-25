@@ -1,9 +1,8 @@
 <a class="skip-link" href="#main-content">
-  {{ language() === 'en' ? 'Skip to content' : 'Passer au contenu' }}
+  {{ 'app.skipToContent' | transloco }}
 </a>
 <app-site-header [language]="language()" (languageChange)="setLanguage($event)" />
 <main id="main-content">
-  <h1>Portfolio</h1>
   <router-outlet />
 </main>
-<app-site-footer [language]="language()" />
+<app-site-footer />

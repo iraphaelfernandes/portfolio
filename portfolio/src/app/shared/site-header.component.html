@@ -1,22 +1,17 @@
 <header class="site-header">
   <div class="header-inner">
-    <a class="brand" [href]="'/' + language()" [attr.aria-label]="site.ownerName + ' — home'">
+    <a class="brand" [routerLink]="['/', language()]" [attr.aria-label]="site.ownerName">
       {{ site.ownerName }}
     </a>
 
-    <nav
-      class="desktop-nav"
-      [attr.aria-label]="language() === 'en' ? 'Main navigation' : 'Navigation principale'"
-    >
-      <a [href]="'/' + language() + '/projects'">{{
-        language() === 'en' ? 'Projects' : 'Projets'
-      }}</a>
-      <a [href]="'/' + language() + '/about'">{{ language() === 'en' ? 'About' : 'À propos' }}</a>
+    <nav class="desktop-nav" [attr.aria-label]="'nav.main' | transloco">
+      <a [routerLink]="['/', language(), 'projects']">{{ 'nav.projects' | transloco }}</a>
+      <a [routerLink]="['/', language(), 'about']">{{ 'nav.about' | transloco }}</a>
     </nav>
 
     <div class="header-controls">
       <app-language-toggle [language]="language()" (languageChange)="selectLanguage($event)" />
-      <app-theme-toggle [language]="language()" />
+      <app-theme-toggle />
       <button
         #menuButton
         #menuOrigin="cdkOverlayOrigin"
@@ -24,13 +19,7 @@
         class="menu-button"
         type="button"
         [attr.aria-label]="
-          menuOpen()
-            ? language() === 'en'
-              ? 'Close menu'
-              : 'Fermer le menu'
-            : language() === 'en'
-              ? 'Open menu'
-              : 'Ouvrir le menu'
+          menuOpen() ? ('nav.closeMenu' | transloco) : ('nav.openMenu' | transloco)
         "
         aria-controls="mobile-navigation"
         [attr.aria-expanded]="menuOpen()"
@@ -64,14 +53,14 @@
       cdkTrapFocus
       cdkTrapFocusAutoCapture
       tabindex="-1"
-      [attr.aria-label]="language() === 'en' ? 'Main navigation' : 'Navigation principale'"
+      [attr.aria-label]="'nav.main' | transloco"
       (keydown.escape)="closeMenu()"
     >
-      <a [href]="'/' + language() + '/projects'" (click)="closeMenu()">
-        {{ language() === 'en' ? 'Projects' : 'Projets' }}
+      <a [routerLink]="['/', language(), 'projects']" (click)="closeMenu()">
+        {{ 'nav.projects' | transloco }}
       </a>
-      <a [href]="'/' + language() + '/about'" (click)="closeMenu()">
-        {{ language() === 'en' ? 'About' : 'À propos' }}
+      <a [routerLink]="['/', language(), 'about']" (click)="closeMenu()">
+        {{ 'nav.about' | transloco }}
       </a>
     </nav>
   </ng-template>

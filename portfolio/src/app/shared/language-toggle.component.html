@@ -1,8 +1,4 @@
-<div
-  class="language-toggle"
-  role="group"
-  [attr.aria-label]="language() === 'en' ? 'Language' : 'Langue'"
->
+<div class="language-toggle" role="group" [attr.aria-label]="'nav.language' | transloco">
   <button
     type="button"
     [attr.aria-pressed]="language() === 'en'"
